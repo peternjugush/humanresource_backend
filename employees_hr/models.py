@@ -19,7 +19,7 @@ class PerformanceEvaluation(models.Model):
     comments = models.TextField()
 
     def __str__(self):
-        return f'{self.employee_name} - {self.evaluation_date}'
+        return self.employee_name
     
 class Feature(models.Model):
     title = models.CharField(max_length=100)
@@ -63,12 +63,3 @@ class Document(models.Model):
 
     def __str__(self):
         return self.name 
-
-class Employee(models.Model):
-    name = models.CharField(max_length=100, null=True)
-    email = models.EmailField(unique=True, null=True)
-    position = models.CharField(max_length=100, null=True)
-    salary = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-
-    def __str__(self):
-        return f"{self.name}"

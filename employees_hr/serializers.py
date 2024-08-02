@@ -78,7 +78,7 @@ class PasswordResetSerializer(serializers.Serializer):
 class PerformanceEvaluationSerializer(serializers.ModelSerializer):
     class Meta:
         model = PerformanceEvaluation
-        fields = '__all__'
+        fields = ['employee_name', 'evaluation_date', 'score', 'comments']
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -112,14 +112,7 @@ class DocumentSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'file', 'uploaded_at']
 
 
-class EmployeeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Employee
-        fields = '__all__'
 
 
-class EmployeeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Employee
-        fields = '__all__'        
+   
           

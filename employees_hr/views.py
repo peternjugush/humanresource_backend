@@ -128,3 +128,4 @@ class DocumentListCreate(generics.ListCreateAPIView):
 class ListCreate(generics.ListCreateAPIView):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer 
+

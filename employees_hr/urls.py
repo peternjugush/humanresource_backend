@@ -23,4 +23,15 @@ urlpatterns = [
     path('api/attendaces/', AttendanceViewSet.as_view(), name='Attendance-View-Set'),
     path('api/leave/', LeaveRequestListCreate.as_view(), name='leave-request-list-create'),
     path('api/documents/', DocumentListCreate.as_view(), name='document-list-create'),
+    path('api/performanceevaluation/', PerformanceEvaluationViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    }), name='performance-evaluation-list'),
+    
+    path('api/performanceevaluation/<int:pk>/', PerformanceEvaluationViewSet.as_view({
+        'get': 'retrieve',
+        'put': 'update',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    }), name='performance-evaluation-detail'),
 ]
